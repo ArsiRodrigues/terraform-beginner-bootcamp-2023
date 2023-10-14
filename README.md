@@ -84,3 +84,27 @@ chmod 744 ./bin/install_terraform_cli
 ### GitPod Lifecycle (Before, Init, Command)
 
 We need to be careful when using the Init because it will not rerun if we restart and existing workspace. 
+
+### AWS CLI Installation
+
+AWS CLI is installed for this project via the bash script [`./bin/install_aws_cli`](./bin/install_aws_cli)
+
+[getting installed with (AWS CLI)](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+[AWS CLI Env Vars](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)
+
+You can check if our AWS credentials is configure correctly by running the following AWS CLI command
+```sh
+aws sts get-caller-identity
+```
+
+If it is successfull, you should see a JSON payload like this:
+
+```json
+{
+    "UserId": "AIDAUFZTJBE4ZM3VAJDGA",
+    "Account": "287333484857",
+    "Arn": "arn:aws:iam::287333484857:user/terraform-beginner-bootcamp"
+}
+```
+
+We'll need to generate AWS CLI credits from IAM user in order to the user AWS CLI. 
