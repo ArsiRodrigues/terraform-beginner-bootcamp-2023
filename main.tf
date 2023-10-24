@@ -1,4 +1,14 @@
 terraform {
+
+  #this next block is required to migrate this project state file to Terraform Cloud
+ cloud {
+    organization = "SigmaSystems"
+
+    workspaces {
+      name = "terra-house-1"
+    }
+  }
+  
   required_providers {
     random = {
       source = "hashicorp/random"
