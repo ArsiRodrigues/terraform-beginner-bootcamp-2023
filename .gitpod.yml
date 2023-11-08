@@ -3,6 +3,7 @@ tasks:
     before: |
       source ./bin/install_terraform_cli.sh
       source ./bin/set_tf_alias
+      source ./bin/generate_trfc_credentials
   - name: aws-cli
     env:
       AWS_CLI_AUTO_PROMPT: on-partial
